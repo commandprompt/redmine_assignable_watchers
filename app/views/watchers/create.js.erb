@@ -1,0 +1,9 @@
+$('#ajax-modal').html('<%= escape_javascript(render(:partial => 'watchers/new', :locals => {:watchables => @watchables, :users => @users})) %>');
+
+<% if @watchables.size == 1 %>
+$('#watchers').html('<%= escape_javascript(render(:partial => 'watchers/watchers', :locals => {:watched => @watchables.first})) %>');
+<% if @watchables.first.class.name == 'Issue'%>
+$('#issue_assigned_to_id').html('<%= content_tag('option', ' ', value: nil) + principals_options_for_select(@watchables.first.assignable_users, @watchables.first.assigned_to) %>')
+<% end %>
+<% end %>
+
