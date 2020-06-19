@@ -4,7 +4,8 @@ module RedmineAssignableWatchers
 
     def self.included(base)
       base.class_eval do
-        alias_method_chain :assignable_users, :watchers_added
+        alias_method :assignable_users_without_watchers_added, :assignable_users
+        alias_method :assignable_users, :assignable_users_with_watchers_added
       end
     end
 

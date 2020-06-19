@@ -1,6 +1,6 @@
 = redmine_assignable_watchers
 
-Redmine 3.x plugin that allows assigning issue to one of its watchers.
+Redmine 3.4+ plugin that allows assigning issue to one of its watchers.
 The plugin patches the Issue.assignable_users method to include the issue watchers,
 additionally, some slight modifications to watcher templates are made in order to update the Assigned To dropdown
 of the issue edit dialog
